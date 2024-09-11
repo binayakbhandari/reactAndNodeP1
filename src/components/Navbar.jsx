@@ -68,26 +68,14 @@ function Navbar() {
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 <Link
-                                    to="#"
+                                    to="/create"
                                     className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
                                     aria-current="page"
                                 >
-                                    Dashboard
+                                    + Create Card
                                 </Link>
                                 <Link
-                                    to="#"
-                                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                                >
-                                    Team
-                                </Link>
-                                <Link
-                                    to="#"
-                                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                                >
-                                    Projects
-                                </Link>
-                                <Link
-                                    to="#"
+                                    to="/contact"
                                     className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                                 >
                                     Contact
@@ -96,10 +84,10 @@ function Navbar() {
                         </div>
                     </div>
                     <div>
-                        <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                            <span class="absolute -inset-1.5"></span>
-                            <span class="sr-only">Open user menu</span>
-                            <img class="h-8 w-8 rounded-full" src="https://media-bom2-1.cdn.whatsapp.net/v/t61.24694-24/457879708_2132613733787818_4224658857756710253_n.jpg?ccb=11-4&oh=01_Q5AaIDor49d-OENI5_eLa3JzXXPJArMRpYJZWhGnq1QmX1hy&oe=66EC6509&_nc_sid=5e03e0&_nc_cat=100" alt="" />
+                        <button type="button" className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                            <span className="absolute -inset-1.5"></span>
+                            <span className="sr-only">Open user menu</span>
+                            <img className="h-8 w-8 rounded-full" src="https://media-bom2-1.cdn.whatsapp.net/v/t61.24694-24/457879708_2132613733787818_4224658857756710253_n.jpg?ccb=11-4&oh=01_Q5AaIDor49d-OENI5_eLa3JzXXPJArMRpYJZWhGnq1QmX1hy&oe=66EC6509&_nc_sid=5e03e0&_nc_cat=100" alt="" />
                         </button>
                     </div>
                 </div>

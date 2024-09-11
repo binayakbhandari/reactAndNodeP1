@@ -1,3 +1,4 @@
+
 function Form() {
     return (
         <>
@@ -10,7 +11,7 @@ function Form() {
                                 {/* <p className="mt-1 text-sm leading-6 text-gray-600">Your information is completely secure—no need to worry!</p> */}
                                 <div className="flex flex-col items-center">
                                     {/* <div className="mt-2 flex items-center gap-x-3"> */}
-                                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="https://media-bom2-1.cdn.whatsapp.net/v/t61.24694-24/457879708_2132613733787818_4224658857756710253_n.jpg?ccb=11-4&oh=01_Q5AaIDor49d-OENI5_eLa3JzXXPJArMRpYJZWhGnq1QmX1hy&oe=66EC6509&_nc_sid=5e03e0&_nc_cat=100    " alt="Bonnie image" />
+                                    <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src="https://media-bom2-1.cdn.whatsapp.net/v/t61.24694-24/457879708_2132613733787818_4224658857756710253_n.jpg?ccb=11-4&oh=01_Q5AaIDor49d-OENI5_eLa3JzXXPJArMRpYJZWhGnq1QmX1hy&oe=66EC6509&_nc_sid=5e03e0&_nc_cat=100    " alt="Bonnie image" />
                                     {/* </div> */}
                                 </div>
 
@@ -90,4 +91,4 @@ function Form() {
     );
 }
 
-export default Form;
+export default Form
