@@ -11,7 +11,7 @@ function Card() {
                         </svg>
                     </button>
                 </div>
-                <div className="flex flex-col items-center pb-10">
+                <div className="flex flex-col items-center pb-10 px-4">
                     <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src="https://media-bom2-1.cdn.whatsapp.net/v/t61.24694-24/457879708_2132613733787818_4224658857756710253_n.jpg?ccb=11-4&oh=01_Q5AaIDor49d-OENI5_eLa3JzXXPJArMRpYJZWhGnq1QmX1hy&oe=66EC6509&_nc_sid=5e03e0&_nc_cat=100    " alt="Bonnie image" />
                     <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">Binayak Bhandari</h5>
                     <span className="text-sm text-gray-500 dark:text-gray-400">Web Developer</span>
