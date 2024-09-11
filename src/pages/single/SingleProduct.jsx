@@ -29,37 +29,40 @@ function SingleProduct() {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
                                 ante justo. Integer euismod libero id mauris malesuada tincidunt.
                             </p>
-                            <div className="flex mb-4">
-                                <div className="mr-4">
-                                    <span className="font-bold text-gray-700 dark:text-gray-300">Price:</span>
-                                    <span className="text-gray-600 dark:text-gray-300">$29.99</span>
+                            <div className="flex flex-col mb-4">
+                                <div className="mr-4 mb-4">
+                                    <span className="font-bold text-gray-700 dark:text-gray-300">Age: </span>
+                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">19</span>
                                 </div>
-                                <div>
-                                    <span className="font-bold text-gray-700 dark:text-gray-300">Availability:</span>
-                                    <span className="text-gray-600 dark:text-gray-300">In Stock</span>
+                                <div className="mr-4 mb-4">
+                                    <span className="font-bold text-gray-700 dark:text-gray-300">Marital Status: </span>
+                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">Single</span>
+                                </div>
+                                <div className="mr-4 mb-4">
+                                    <span className="font-bold text-gray-700 dark:text-gray-300">Profession: </span>
+                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">Teacher / Student</span>
+                                </div>
+                                <div className="mr-4 mb-4">
+                                    <span className="font-bold text-gray-700 dark:text-gray-300">Hobbies: </span>
+                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">Coding and Drinking Coffee</span>
+                                </div>
+                                <div className="mr-4 mb-4">
+                                    <span className="font-bold text-gray-700 dark:text-gray-300">Hobbies: </span>
+                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">Coding and Drinking Coffee</span>
                                 </div>
                             </div>
+        
                             <div className="mb-4">
-                                <span className="font-bold text-gray-700 dark:text-gray-300">Select Color:</span>
+                                <span className="font-bold text-gray-700 dark:text-gray-300">Skills:</span>
                                 <div className="flex items-center mt-2">
-                                    <button className="w-6 h-6 rounded-full bg-gray-800 dark:bg-gray-200 mr-2"></button>
-                                    <button className="w-6 h-6 rounded-full bg-red-500 dark:bg-red-700 mr-2"></button>
-                                    <button className="w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-700 mr-2"></button>
-                                    <button className="w-6 h-6 rounded-full bg-yellow-500 dark:bg-yellow-700 mr-2"></button>
-                                </div>
-                            </div>
-                            <div className="mb-4">
-                                <span className="font-bold text-gray-700 dark:text-gray-300">Select Size:</span>
-                                <div className="flex items-center mt-2">
-                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">S</button>
-                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">M</button>
-                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">L</button>
-                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">XL</button>
-                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">XXL</button>
+                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Tailwind CSS</button>
+                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">ReactJS</button>
+                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">NodeJS</button>
+                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">GitHub</button>
                                 </div>
                             </div>
                             <div>
-                                <span className="font-bold text-gray-700 dark:text-gray-300">Product Description:</span>
+                                <span className="font-bold text-gray-700 dark:text-gray-300">Short Description:</span>
                                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                                     sed ante justo. Integer euismod libero id mauris malesuada tincidunt. Vivamus commodo nulla ut
