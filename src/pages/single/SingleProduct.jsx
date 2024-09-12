@@ -1,6 +1,32 @@
-import { Link } from "react-router-dom"
+import axios from "axios"
+import { useEffect, useState } from "react"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 function SingleProduct() {
+    const { id } = useParams()
+    const [person,setPerson] = useState({})
+    const navigate = useNavigate()
+    const fetchPerson = async () => {
+        const response = await axios.get("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id)
+        console.log(response)
+        if(response.status === 200){
+            setPerson(response.data)
+        }
+    }
+
+    const deletePerson = async ()=>{
+        const response = await axios.delete("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id)
+        console.log(response)
+        if(response.status === 200){
+            navigate('/')
+        }else{
+            alert("Fail to delete the file !")
+        }
+    }
+
+    useEffect(() => {
+        fetchPerson()
+    },[])
     return (
         <>
             <div className="bg-gray-100 dark:bg-gray-800 py-8">
@@ -8,31 +34,35 @@ function SingleProduct() {
                     <div className="flex flex-col md:flex-row -mx-4">
                         <div className="md:flex-1 px-4">
                             <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-                                <img className="w-full h-full object-cover" src="https://media-bom2-1.cdn.whatsapp.net/v/t61.24694-24/457879708_2132613733787818_4224658857756710253_n.jpg?ccb=11-4&oh=01_Q5AaIDor49d-OENI5_eLa3JzXXPJArMRpYJZWhGnq1QmX1hy&oe=66EC6509&_nc_sid=5e03e0&_nc_cat=100" alt="Product Image" />
+                                <img className="w-full h-full object-cover" src={person.personImage} alt="Product Image" />
                             </div>
-                            <div className="flex -mx-2 mb-4">
-                                <div className="w-1/2 px-2">
+                            <div className="flex flex-wrap gap-2 -mx-2 mb-4">
+                                <div className="w-1/2 px-2 ">
                                     <Link to="">
-                                    <button className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add friend</button>
+                                        <button className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add friend</button>
                                     </Link>
                                 </div>
                                 <div className="w-1/2 px-2">
                                     <Link to="/edit">
-                                    <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">Edit Details</button>
+                                        <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">Edit Details</button>
+                                    </Link>
+                                </div>
+                                <div className="w-1/2 px-2">
+                                    <Link to="/edit">
+                                        <button onClick={deletePerson} className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">Delete Details</button>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="md:flex-1 px-4">
-                            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Binayak Bhandari</h2>
+                            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">{person.personName}</h2>
                             <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
-                                ante justo. Integer euismod libero id mauris malesuada tincidunt.
+                                {person.personDescription}
                             </p>
                             <div className="flex flex-col mb-4">
                                 <div className="mr-4 mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Age: </span>
-                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">19</span>
+                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personAge}</span>
                                 </div>
                                 <div className="mr-4 mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Marital Status: </span>
@@ -40,17 +70,17 @@ function SingleProduct() {
                                 </div>
                                 <div className="mr-4 mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Profession: </span>
-                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">Teacher / Student</span>
+                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personProfession}</span>
                                 </div>
                                 <div className="mr-4 mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Hobbies: </span>
-                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">Coding and Drinking Coffee</span>
+                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personHobbies}</span>
                                 </div>
                             </div>
-        
+
                             <div className="mb-4">
                                 <span className="font-bold text-gray-700 dark:text-gray-300">Skills:</span>
-                                <div className="flex items-center mt-2">
+                                <div className="flex flex-wrap gap-2 items-center mt-2">
                                     <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Tailwind CSS</button>
                                     <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">ReactJS</button>
                                     <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">NodeJS</button>
