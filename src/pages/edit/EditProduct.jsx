@@ -10,7 +10,7 @@ function EditProduct(){
 
         <Form />
 
-        <Footer />
+        <Footer type="edit" />
         </>
     )
 }

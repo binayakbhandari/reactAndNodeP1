@@ -8,7 +8,7 @@ function CreateProduct(){
         <>
         <Navbar />
 
-        <Form />
+        <Form type="create" />
         
         <Footer />
         </>

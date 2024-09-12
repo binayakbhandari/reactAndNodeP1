@@ -1,5 +1,6 @@
 
-function Form() {
+function Form(props) {
+    console.log(props.type)
     return (
         <>
             <div className="flex justify-center items-center min-h-screen px-4 py-8">
@@ -21,8 +22,8 @@ function Form() {
                                         <div className="mt-2">
                                             <input
                                                 type="text"
-                                                name="fullname"
-                                                id="fullname"
+                                                name="personName"
+                                                id="personName"
                                                 autoComplete="username"
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Binayak Bhandari"
@@ -30,15 +31,41 @@ function Form() {
                                         </div>
                                     </div>
                                     <div className="md:col-span-1">
-                                        <label htmlFor="profession" className="block text-sm font-medium leading-6 text-gray-900">Profession</label>
+                                        <label htmlFor="personProfession" className="block text-sm font-medium leading-6 text-gray-900">Profession</label>
                                         <div className="mt-2">
                                             <input
                                                 type="text"
-                                                name="profession"
-                                                id="profession"
-                                                autoComplete="profession"
+                                                name="personProfession"
+                                                id="personProfession"
+                                                autoComplete="personProfession"
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Student"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="md:col-span-1">
+                                        <label htmlFor="personProfession" className="block text-sm font-medium leading-6 text-gray-900">Age</label>
+                                        <div className="mt-2">
+                                            <input
+                                                type="number"
+                                                name="personAge"
+                                                id="personAge"
+                                                autoComplete="personAge"
+                                                className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
+                                                placeholder="19"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="md:col-span-1">
+                                        <label htmlFor="personProfession" className="block text-sm font-medium leading-6 text-gray-900">Hobbies</label>
+                                        <div className="mt-2">
+                                            <input
+                                                type="text"
+                                                name="personHobbies"
+                                                id="personHobbies"
+                                                autoComplete="personHobbies"
+                                                className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
+                                                placeholder="Coding and Drinking Coffee"
                                             />
                                         </div>
                                     </div>
@@ -47,8 +74,8 @@ function Form() {
                                         <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">About</label>
                                         <div className="mt-2">
                                             <textarea
-                                                id="about"
-                                                name="about"
+                                                id="personDescription"
+                                                name="personDescription"
                                                 rows="3"
                                                 placeholder="By day, I teach; by night, I learn  . . . ."
                                                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 p-3 focus:ring-2 focus:ring-indigo-600 sm:text-sm"

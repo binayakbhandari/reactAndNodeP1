@@ -1,17 +1,36 @@
+import axios from "axios"
 import Card from "../../components/Card"
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
+import { useEffect, useState } from "react"
 
 function Home() {
+    const [persons,setPersons] = useState([])
+    const fetchPersons = async ()=>{
+        const response = await axios.get("https://66dc946947d749b72acbfa21.mockapi.io/persons")
+        // console.log(response.data)
+        if(response.status === 200){
+            setPersons(response.data)
+        }
+    }
+    useEffect(()=>{
+        fetchPersons()
+    },[])
+
+    console.log(persons)
     return (
         <>
             <div className="flex flex-col min-h-screen">
                 <Navbar />
 
                 <main className="flex-1 flex flex-col justify-center items-center gap-5 mt-5 mx-2 md:flex-row">
-                    <Card />
-                    <Card />
-                    <Card />
+                    {
+                        persons.map((person)=>{
+                            return(
+                                <Card person={person}/>
+                            )
+                        })
+                    }
                 </main>
 
                 <Footer />

@@ -46,10 +46,6 @@ function SingleProduct() {
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Hobbies: </span>
                                     <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">Coding and Drinking Coffee</span>
                                 </div>
-                                <div className="mr-4 mb-4">
-                                    <span className="font-bold text-gray-700 dark:text-gray-300">Hobbies: </span>
-                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">Coding and Drinking Coffee</span>
-                                </div>
                             </div>
         
                             <div className="mb-4">
