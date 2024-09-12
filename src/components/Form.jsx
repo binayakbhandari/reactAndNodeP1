@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 
 function Form({type}) {
@@ -7,12 +8,33 @@ function Form({type}) {
         personProfession : "",
         personHobbies : "",
         personDescription : "",
+        personStatus : "",
+        personImage : "",
+        personLink : ""
     })
+
+    const handleChange = (e)=>{
+        // console.log(e.target.value)
+        const {name,value} = e.target
+        setData({
+            ...data,
+            [name] : value
+        })
+    }
+    console.log(data)
+
+    const createProduct = async (e)=>{
+        e.preventDefault()
+        const response = await axios.post("https://66dc946947d749b72acbfa21.mockapi.io/persons",data)
+        console.log(response)
+
+    }
+
     return (
         <>
             <div className="flex justify-center items-center min-h-screen px-4 py-8">
                 <div className="w-full max-w-4xl bg-white p-6 rounded-lg shadow-lg">
-                    <form>
+                    <form onSubmit={createProduct}>
                         <div className="space-y-8">
                             <div className="border-b border-gray-900/10 pb-8">
                                 {/* <h2 className="text-lg font-semibold leading-7 text-gray-900">Edit Information</h2> */}
@@ -34,6 +56,7 @@ function Form({type}) {
                                                 autoComplete="username"
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Binayak Bhandari"
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
@@ -47,6 +70,7 @@ function Form({type}) {
                                                 autoComplete="personProfession"
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Student"
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
@@ -54,12 +78,13 @@ function Form({type}) {
                                         <label htmlFor="personProfession" className="block text-sm font-medium leading-6 text-gray-900">Age</label>
                                         <div className="mt-2">
                                             <input
-                                                type="number"
+                                                type="text"
                                                 name="personAge"
                                                 id="personAge"
                                                 autoComplete="personAge"
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="19"
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
@@ -73,6 +98,7 @@ function Form({type}) {
                                                 autoComplete="personHobbies"
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Coding and Drinking Coffee"
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
@@ -86,6 +112,7 @@ function Form({type}) {
                                                 autoComplete="personStatus"
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Single"
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
@@ -99,6 +126,7 @@ function Form({type}) {
                                                 autoComplete="personImage"
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="https://example.com/image.jpg/"
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
@@ -112,6 +140,7 @@ function Form({type}) {
                                                 autoComplete="personLink"
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="https://facebook.com/binayakbhandari.np/"
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
@@ -125,6 +154,7 @@ function Form({type}) {
                                                 rows="3"
                                                 placeholder="By day, I teach; by night, I learn  . . . ."
                                                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 p-3 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
+                                                onChange={handleChange}
                                             ></textarea>
                                         </div>
                                     </div>
@@ -154,7 +184,7 @@ function Form({type}) {
 
                         <div className="mt-6 flex items-center justify-end gap-x-6">
                             <button type="button" className="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-                            <button type="submit" className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Edit</button>
+                            <button type="submit" className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{type}</button>
                         </div>
                     </form>
                 </div>

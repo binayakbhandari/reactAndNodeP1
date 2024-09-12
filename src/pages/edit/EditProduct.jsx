@@ -8,9 +8,9 @@ function EditProduct(){
         <>
         <Navbar />
 
-        <Form />
+        <Form type="edit" />
 
-        <Footer type="edit" />
+        <Footer />
         </>
     )
 }
