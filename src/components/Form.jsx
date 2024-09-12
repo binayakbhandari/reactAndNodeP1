@@ -1,6 +1,13 @@
+import { useState } from "react";
 
-function Form(props) {
-    console.log(props.type)
+function Form({type}) {
+    const [data,setData] = useState({
+        personName : "",
+        personAge : "",
+        personProfession : "",
+        personHobbies : "",
+        personDescription : "",
+    })
     return (
         <>
             <div className="flex justify-center items-center min-h-screen px-4 py-8">
@@ -69,6 +76,45 @@ function Form(props) {
                                             />
                                         </div>
                                     </div>
+                                    <div className="md:col-span-1">
+                                        <label htmlFor="personProfession" className="block text-sm font-medium leading-6 text-gray-900">Marital Status</label>
+                                        <div className="mt-2">
+                                            <input
+                                                type="text"
+                                                name="personStatus"
+                                                id="personStatus"
+                                                autoComplete="personStatus"
+                                                className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
+                                                placeholder="Single"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="md:col-span-1">
+                                        <label htmlFor="personProfession" className="block text-sm font-medium leading-6 text-gray-900">Image</label>
+                                        <div className="mt-2">
+                                            <input
+                                                type="text"
+                                                name="personImage"
+                                                id="personImage"
+                                                autoComplete="personImage"
+                                                className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
+                                                placeholder="https://example.com/image.jpg/"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="md:col-span-1">
+                                        <label htmlFor="personProfession" className="block text-sm font-medium leading-6 text-gray-900">Social Media Link</label>
+                                        <div className="mt-2">
+                                            <input
+                                                type="text"
+                                                name="personLink"
+                                                id="personLink"
+                                                autoComplete="personLink"
+                                                className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
+                                                placeholder="https://facebook.com/binayakbhandari.np/"
+                                            />
+                                        </div>
+                                    </div>
 
                                     <div className="md:col-span-2">
                                         <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">About</label>
@@ -84,7 +130,7 @@ function Form(props) {
                                     </div>
 
 
-                                    <div className="md:col-span-2">
+                                    {/* <div className="md:col-span-2">
                                         <label htmlFor="cover-photo" className="block text-sm font-medium leading-6 text-gray-900">Cover photo</label>
                                         <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                                             <div className="text-center">
@@ -101,7 +147,7 @@ function Form(props) {
                                                 <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>

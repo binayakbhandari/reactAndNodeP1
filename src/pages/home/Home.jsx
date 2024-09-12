@@ -23,7 +23,7 @@ function Home() {
             <div className="flex flex-col min-h-screen">
                 <Navbar />
 
-                <main className="flex-1 flex flex-col justify-center items-center gap-5 mt-5 mx-2 md:flex-row">
+                <main className="flex-1 flex flex-wrap justify-center items-center gap-5 mt-5 mx-2 md:flex-row">
                     {
                         persons.map((person)=>{
                             return(
