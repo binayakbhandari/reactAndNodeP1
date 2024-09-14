@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Form({type}) {
+    const navigate = useNavigate()
     const [data,setData] = useState({
         personName : "",
         personAge : "",
@@ -26,8 +28,11 @@ function Form({type}) {
     const createProduct = async (e)=>{
         e.preventDefault()
         const response = await axios.post("https://66dc946947d749b72acbfa21.mockapi.io/persons",data)
-        console.log(response)
-
+        if(response.status === 201){
+            navigate('/')
+        }else{
+            alert("Fail to create new profile.")
+        }
     }
 
     return (
@@ -181,11 +186,11 @@ function Form({type}) {
                                 </div>
                             </div>
                         </div>
-
                         <div className="mt-6 flex items-center justify-end gap-x-6">
                             <button type="button" className="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
                             <button type="submit" className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{type}</button>
                         </div>
+
                     </form>
                 </div>
             </div>

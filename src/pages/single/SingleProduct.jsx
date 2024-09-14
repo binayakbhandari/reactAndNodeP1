@@ -37,19 +37,19 @@ function SingleProduct() {
                                 <img className="w-full h-full object-cover" src={person.personImage} alt="Product Image" />
                             </div>
                             <div className="flex flex-wrap -mx-2 mb-4">
-                                <div className="w-1/2 px-2 mb-4">
+                                {/* <div className="w-1/2 px-2 mb-4">
                                     <Link to="">
                                         <button className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add friend</button>
                                     </Link>
-                                </div>
+                                </div> */}
                                 <div className="w-1/2 px-2 mb-2">
                                     <Link to="/edit">
-                                        <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">Edit Details</button>
+                                        <button className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Edit Details</button>
                                     </Link>
                                 </div>
                                 <div className="w-1/2 px-2 mb-2">
                                     <Link to="/">
-                                        <button onClick={deletePerson} className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">Delete Details</button>
+                                        <button onClick={deletePerson} className="w-full bg-red-900 dark:bg-gray-700 text-white dark:text-white py-2 px-4 rounded-full font-bold hover:bg-red-800 dark:hover:bg-gray-600">Delete Details</button>
                                     </Link>
                                 </div>
                             </div>
