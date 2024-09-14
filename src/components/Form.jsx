@@ -3,18 +3,9 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Form({type,person}) {
-    console.log(person, "Haha")
+    // console.log(person, "Haha")
     const navigate = useNavigate()
-    const [data,setData] = useState(person
-        // personName : "",
-        // personAge : "",
-        // personProfession : "",
-        // personHobbies : "",
-        // personDescription : "",
-        // personStatus : "",
-        // personImage : "",
-        // personLink : ""
-    )
+    const [data,setData] = useState()
 
     const handleChange = (e)=>{
         // console.log(e.target.value)
@@ -24,7 +15,7 @@ function Form({type,person}) {
             [name] : value
         })
     }
-    // console.log(data)
+    console.log(data)
 
     const createProduct = async (e) => {
         e.preventDefault()
