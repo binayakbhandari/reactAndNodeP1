@@ -1,19 +1,20 @@
 import axios from "axios";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-function Form({type}) {
+function Form({type,person}) {
+    console.log(person, "Haha")
     const navigate = useNavigate()
-    const [data,setData] = useState({
-        personName : "",
-        personAge : "",
-        personProfession : "",
-        personHobbies : "",
-        personDescription : "",
-        personStatus : "",
-        personImage : "",
-        personLink : ""
-    })
+    const [data,setData] = useState(person
+        // personName : "",
+        // personAge : "",
+        // personProfession : "",
+        // personHobbies : "",
+        // personDescription : "",
+        // personStatus : "",
+        // personImage : "",
+        // personLink : ""
+    )
 
     const handleChange = (e)=>{
         // console.log(e.target.value)
@@ -23,15 +24,19 @@ function Form({type}) {
             [name] : value
         })
     }
-    console.log(data)
+    // console.log(data)
 
-    const createProduct = async (e)=>{
+    const createProduct = async (e) => {
         e.preventDefault()
-        const response = await axios.post("https://66dc946947d749b72acbfa21.mockapi.io/persons",data)
-        if(response.status === 201){
-            navigate('/')
-        }else{
-            alert("Fail to create new profile.")
+        if (type === "create") {
+            const response = await axios.post("https://66dc946947d749b72acbfa21.mockapi.io/persons", data)
+            if (response.status === 201) {
+                navigate('/')
+            } else {
+                alert("Fail to create new profile.")
+            }
+        } else {
+
         }
     }
 
@@ -62,6 +67,7 @@ function Form({type}) {
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Binayak Bhandari"
                                                 onChange={handleChange}
+                                                value={data.personName}
                                             />
                                         </div>
                                     </div>
@@ -76,6 +82,7 @@ function Form({type}) {
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Student"
                                                 onChange={handleChange}
+                                                value={data.personProfession}
                                             />
                                         </div>
                                     </div>
@@ -90,6 +97,7 @@ function Form({type}) {
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="19"
                                                 onChange={handleChange}
+                                                value={data.personAge}
                                             />
                                         </div>
                                     </div>
@@ -104,6 +112,7 @@ function Form({type}) {
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Coding and Drinking Coffee"
                                                 onChange={handleChange}
+                                                value={data.personHobbies}
                                             />
                                         </div>
                                     </div>
@@ -118,6 +127,7 @@ function Form({type}) {
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Single"
                                                 onChange={handleChange}
+                                                value={data.personStatus}
                                             />
                                         </div>
                                     </div>
@@ -132,6 +142,7 @@ function Form({type}) {
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="https://example.com/image.jpg/"
                                                 onChange={handleChange}
+                                                value={data.personImage}
                                             />
                                         </div>
                                     </div>
@@ -146,6 +157,7 @@ function Form({type}) {
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="https://facebook.com/binayakbhandari.np/"
                                                 onChange={handleChange}
+                                                value={data.personLink}
                                             />
                                         </div>
                                     </div>
@@ -160,6 +172,7 @@ function Form({type}) {
                                                 placeholder="By day, I teach; by night, I learn  . . . ."
                                                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 p-3 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 onChange={handleChange}
+                                                value={data.personDescription}
                                             ></textarea>
                                         </div>
                                     </div>
