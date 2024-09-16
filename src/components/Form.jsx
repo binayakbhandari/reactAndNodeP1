@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Form({type,id}) {
     // console.log(person, "Haha")
@@ -13,7 +13,9 @@ function Form({type,id}) {
         }
     }
     useEffect(()=>{
-            fetchPerson()
+            if(type == "edit"){
+                fetchPerson()
+            }
     },[])
 
     const handleChange = (e)=>{
@@ -63,7 +65,7 @@ function Form({type,id}) {
                                                 type="text"
                                                 name="personName"
                                                 id="personName"
-                                                autoComplete="username"
+                                                // autoComplete="username"
                                                 className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 placeholder="Binayak Bhandari"
                                                 onChange={handleChange}
