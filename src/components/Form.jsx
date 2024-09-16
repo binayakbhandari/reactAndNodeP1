@@ -2,10 +2,19 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-function Form({type,person}) {
+function Form({type,id}) {
     // console.log(person, "Haha")
     const navigate = useNavigate()
-    const [data,setData] = useState()
+    const [data,setData] = useState({})
+    const fetchPerson = async ()=>{
+        const response = axios.get("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id)
+        if(response.status === 200){
+            setData(response.data)
+        }
+    }
+    useEffect(()=>{
+            fetchPerson()
+    },[])
 
     const handleChange = (e)=>{
         // console.log(e.target.value)
