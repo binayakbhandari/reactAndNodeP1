@@ -27,7 +27,7 @@ function Home() {
                     {
                         persons.map((person)=>{
                             return(
-                                <Card person={person}/>
+                                <Card person={person} fetchPersons={fetchPersons}/>
                             )
                         })
                     }

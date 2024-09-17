@@ -1,32 +1,33 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
+import Home from "../home/Home"
 
 function SingleProduct() {
     const { id } = useParams()
-    const [person,setPerson] = useState({})
+    const [person, setPerson] = useState({})
     const navigate = useNavigate()
     const fetchPerson = async () => {
         const response = await axios.get("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id)
         console.log(response)
-        if(response.status === 200){
+        if (response.status === 200) {
             setPerson(response.data)
         }
     }
 
-    const deletePerson = async ()=>{
+    const deletePerson = async () => {
         const response = await axios.delete("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id)
         console.log(response)
-        if(response.status === 200){
+        if (response.status === 200) {
             navigate('/')
-        }else{
+        } else {
             alert("Fail to delete the file !")
         }
     }
 
     useEffect(() => {
         fetchPerson()
-    },[])
+    }, [])
 
 
     return (
@@ -50,9 +51,7 @@ function SingleProduct() {
                                     </Link>
                                 </div>
                                 <div className="w-1/2 px-2 mb-2">
-                                    <Link to="/">
-                                        <button onClick={deletePerson} className="w-full bg-red-900 dark:bg-gray-700 text-white dark:text-white py-2 px-4 rounded-full font-bold hover:bg-red-800 dark:hover:bg-gray-600">Delete Details</button>
-                                    </Link>
+                                    <button onClick={deletePerson} className="w-full bg-red-900 dark:bg-gray-700 text-white dark:text-white py-2 px-4 rounded-full font-bold hover:bg-red-800 dark:hover:bg-gray-600">Delete Details</button>
                                 </div>
                             </div>
                         </div>
@@ -63,24 +62,24 @@ function SingleProduct() {
                             </p>
                             <div className="flex flex-col mb-0">
                                 <div className="flex flex-wrap">
-                                <div className="mr-4 mb-4">
-                                    <span className="font-bold text-gray-700 dark:text-gray-300">Age: </span>
-                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personAge}</span>
-                                </div>
-                                <div className="mr-4 mb-4">
-                                    <span className="font-bold text-gray-700 dark:text-gray-300">Gender: </span>
-                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personGender}</span>
-                                </div>
+                                    <div className="mr-4 mb-4">
+                                        <span className="font-bold text-gray-700 dark:text-gray-300">Age: </span>
+                                        <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personAge}</span>
+                                    </div>
+                                    <div className="mr-4 mb-4">
+                                        <span className="font-bold text-gray-700 dark:text-gray-300">Gender: </span>
+                                        <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personGender}</span>
+                                    </div>
                                 </div>
                                 <div className="flex flex-wrap">
-                                <div className="mr-4 mb-4">
-                                    <span className="font-bold text-gray-700 dark:text-gray-300">Marital Status: </span>
-                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personStatus}</span>
-                                </div>
-                                <div className="mr-4 mb-4">
-                                    <span className="font-bold text-gray-700 dark:text-gray-300">Profession: </span>
-                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personProfession}</span>
-                                </div>
+                                    <div className="mr-4 mb-4">
+                                        <span className="font-bold text-gray-700 dark:text-gray-300">Marital Status: </span>
+                                        <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personStatus}</span>
+                                    </div>
+                                    <div className="mr-4 mb-4">
+                                        <span className="font-bold text-gray-700 dark:text-gray-300">Profession: </span>
+                                        <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personProfession}</span>
+                                    </div>
                                 </div>
                                 <div className="mr-4 mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Hobbies: </span>
@@ -101,7 +100,7 @@ function SingleProduct() {
                             <div>
                                 <span className="font-bold text-gray-700 dark:text-gray-300">Short Description:</span>
                                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                                {person.personName} is a {person.personAge}-year-old {person.personProfession} driven by the motto “{person.personMoto}.” Known for {person.personGender === 'male' ? 'his' : 'her'} exceptional communication, teamwork, problem-solving, adaptability, and time management skills, {person.personGender === 'male' ? 'He' : 'She'} thrives in both personal and professional environments. With a passion for {person.personHobbies}, {person.personGender === 'male' ? 'he' : 'she'} is constantly seeking new opportunities to learn, grow, and make an impact.
+                                    {person.personName} is a {person.personAge}-year-old {person.personProfession} driven by the motto “{person.personMoto}.” Known for {person.personGender === 'male' ? 'his' : 'her'} exceptional communication, teamwork, problem-solving, adaptability, and time management skills, {person.personGender === 'male' ? 'He' : 'She'} thrives in both personal and professional environments. With a passion for {person.personHobbies}, {person.personGender === 'male' ? 'he' : 'she'} is constantly seeking new opportunities to learn, grow, and make an impact.
 
 
                                 </p>
