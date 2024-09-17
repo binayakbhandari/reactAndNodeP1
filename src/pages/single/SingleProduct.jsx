@@ -4,10 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 
 function SingleProduct() {
     const { id } = useParams()
-    const [person,setPerson] = useState({
-        personStatus : "single",
-        personGender : "male"
-    })
+    const [person,setPerson] = useState({})
     const navigate = useNavigate()
     const fetchPerson = async () => {
         const response = await axios.get("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id)
