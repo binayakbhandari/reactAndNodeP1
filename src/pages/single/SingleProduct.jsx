@@ -101,7 +101,7 @@ function SingleProduct() {
                             <div>
                                 <span className="font-bold text-gray-700 dark:text-gray-300">Short Description:</span>
                                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                                {person.personName} is a {person.personAge}-year-old {person.personProfession} driven by the motto “{person.personMoto}.” Known for their exceptional communication, teamwork, problem-solving, adaptability, and time management skills, {person.personGender === 'male' ? 'He' : 'She'} thrives in both personal and professional environments. With a passion for {person.personHobbies}, {person.personGender === 'male' ? 'he' : 'she'} is constantly seeking new opportunities to learn, grow, and make an impact.
+                                {person.personName} is a {person.personAge}-year-old {person.personProfession} driven by the motto “{person.personMoto}.” Known for {person.personGender === 'male' ? 'his' : 'her'} exceptional communication, teamwork, problem-solving, adaptability, and time management skills, {person.personGender === 'male' ? 'He' : 'She'} thrives in both personal and professional environments. With a passion for {person.personHobbies}, {person.personGender === 'male' ? 'he' : 'she'} is constantly seeking new opportunities to learn, grow, and make an impact.
 
 
                                 </p>
