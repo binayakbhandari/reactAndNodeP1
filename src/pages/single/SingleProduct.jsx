@@ -2,6 +2,8 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import Home from "../home/Home"
+import Navbar from "../../components/Navbar"
+import Footer from "../../components/Footer"
 
 function SingleProduct() {
     const { id } = useParams()
@@ -32,6 +34,7 @@ function SingleProduct() {
 
     return (
         <>
+        <Navbar />
             <div className="bg-gray-100 dark:bg-gray-800 py-8">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row -mx-4">
@@ -110,6 +113,7 @@ function SingleProduct() {
                 </div>
             </div>
 
+            <Footer />
         </>
     )
 }
