@@ -2,30 +2,30 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Form({type,id}) {
+function Form({ type, id }) {
     // console.log(person, "Haha")
     const defaultImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhaM9z2Crf5aEDYpFp1Bj18o3cQ690URe_ow&s"
     const navigate = useNavigate()
-    const [data,setData] = useState({})
-    const fetchPerson = async ()=>{
+    const [data, setData] = useState({})
+    const fetchPerson = async () => {
         const response = await axios.get("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id)
-        if(response.status === 200){
+        if (response.status === 200) {
             setData(response.data)
         }
     }
 
-    useEffect(()=>{
-            if(type === "edit"){
-                fetchPerson()
-            }
-    },[])
+    useEffect(() => {
+        if (type === "edit") {
+            fetchPerson()
+        }
+    }, [])
 
-    const handleChange = (e)=>{
+    const handleChange = (e) => {
         // console.log(e.target.value)
-        const {value,name} = e.target
+        const { value, name } = e.target
         setData({
             ...data,
-            [name] : value
+            [name]: value
         })
     }
     console.log(data)
@@ -41,9 +41,9 @@ function Form({type,id}) {
             }
         } else {
             const response = await axios.put("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id, data)
-            if(response.status === 200){
+            if (response.status === 200) {
                 navigate('/')
-            }else{
+            } else {
                 alert("Failed to edit the profile.")
             }
         }
@@ -126,9 +126,24 @@ function Form({type,id}) {
                                         </div>
                                     </div>
                                     <div className="md:col-span-1">
+                                        <label htmlFor="personGender" className="block text-sm font-medium leading-6 text-gray-900">Gender</label>
+                                        <div className="mt-2">
+                                            <select
+                                                name="personGender"
+                                                id="personGender"
+                                                className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
+                                                onChange={handleChange}
+                                                value={data.personGender}
+                                            >
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="md:col-span-1">
                                         <label htmlFor="personProfession" className="block text-sm font-medium leading-6 text-gray-900">Marital Status</label>
                                         <div className="mt-2">
-                                            <input
+                                            {/* <input
                                                 type="text"
                                                 name="personStatus"
                                                 id="personStatus"
@@ -137,7 +152,18 @@ function Form({type,id}) {
                                                 placeholder="Single"
                                                 onChange={handleChange}
                                                 value={data.personStatus}
-                                            />
+                                            /> */}
+                                            <select
+                                                name="personStatus"
+                                                id="personStatus"
+                                                className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
+                                                onChange={handleChange}
+                                                value={data.personStatus}
+                                            >
+                                                <option value="Single">Single</option>
+                                                <option value="In relationship">In relationship</option>
+                                                <option value="Married">Married</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div className="md:col-span-1">

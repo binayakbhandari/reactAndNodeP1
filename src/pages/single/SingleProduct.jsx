@@ -4,7 +4,10 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 
 function SingleProduct() {
     const { id } = useParams()
-    const [person,setPerson] = useState({})
+    const [person,setPerson] = useState({
+        personStatus : "single",
+        personGender : "male"
+    })
     const navigate = useNavigate()
     const fetchPerson = async () => {
         const response = await axios.get("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id)
@@ -61,11 +64,18 @@ function SingleProduct() {
                             <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
                                 {person.personMoto}
                             </p>
-                            <div className="flex flex-col mb-2">
+                            <div className="flex flex-col mb-0">
+                                <div className="flex flex-wrap">
                                 <div className="mr-4 mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Age: </span>
                                     <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personAge}</span>
                                 </div>
+                                <div className="mr-4 mb-4">
+                                    <span className="font-bold text-gray-700 dark:text-gray-300">Gender: </span>
+                                    <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personGender}</span>
+                                </div>
+                                </div>
+                                <div className="flex flex-wrap">
                                 <div className="mr-4 mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Marital Status: </span>
                                     <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personStatus}</span>
@@ -73,6 +83,7 @@ function SingleProduct() {
                                 <div className="mr-4 mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Profession: </span>
                                     <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personProfession}</span>
+                                </div>
                                 </div>
                                 <div className="mr-4 mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Hobbies: </span>
@@ -93,7 +104,8 @@ function SingleProduct() {
                             <div>
                                 <span className="font-bold text-gray-700 dark:text-gray-300">Short Description:</span>
                                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                                {person.personName}, a {person.personAge}-year-old {person.personProfession}, follows the motto “{person.personDescription}” With a passion for {person.personHobbies}, he is in a {person.personStatus} and always eager to learn and grow.
+                                {person.personName} is a {person.personAge}-year-old {person.personProfession} driven by the motto “{person.personMoto}.” Known for their exceptional communication, teamwork, problem-solving, adaptability, and time management skills, {person.personGender === 'male' ? 'He' : 'She'} thrives in both personal and professional environments. With a passion for {person.personHobbies}, {person.personGender === 'male' ? 'he' : 'she'} is constantly seeking new opportunities to learn, grow, and make an impact.
+
 
                                 </p>
                             </div>
