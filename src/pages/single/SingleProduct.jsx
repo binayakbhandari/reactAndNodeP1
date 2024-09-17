@@ -58,7 +58,7 @@ function SingleProduct() {
                         </div>
                         <div className="md:flex-1 px-4">
                             <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">{person.personName}</h2>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                            <p className="text-gray-600 font-semibold italic dark:text-gray-300 text-sm mb-4">
                                 {person.personMoto}
                             </p>
                             <div className="flex flex-col mb-0">
