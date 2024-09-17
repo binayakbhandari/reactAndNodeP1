@@ -59,9 +59,9 @@ function SingleProduct() {
                         <div className="md:flex-1 px-4">
                             <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">{person.personName}</h2>
                             <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                                {person.personDescription}
+                                {person.personMoto}
                             </p>
-                            <div className="flex flex-col mb-4">
+                            <div className="flex flex-col mb-2">
                                 <div className="mr-4 mb-4">
                                     <span className="font-bold text-gray-700 dark:text-gray-300">Age: </span>
                                     <span className="text-gray-600 font-semibold text-sm dark:text-gray-300">{person.personAge}</span>
@@ -80,23 +80,21 @@ function SingleProduct() {
                                 </div>
                             </div>
 
-                            <div className="mb-4">
+                            <div className="mb-6">
                                 <span className="font-bold text-gray-700 dark:text-gray-300">Skills:</span>
                                 <div className="flex flex-wrap gap-2 items-center mt-2">
-                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Tailwind CSS</button>
-                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">ReactJS</button>
-                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">NodeJS</button>
-                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">GitHub</button>
+                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Communication</button>
+                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Teamwork</button>
+                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Problem-solving</button>
+                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Adaptability</button>
+                                    <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Time Management</button>
                                 </div>
                             </div>
                             <div>
                                 <span className="font-bold text-gray-700 dark:text-gray-300">Short Description:</span>
                                 <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                    sed ante justo. Integer euismod libero id mauris malesuada tincidunt. Vivamus commodo nulla ut
-                                    lorem rhoncus aliquet. Duis dapibus augue vel ipsum pretium, et venenatis sem blandit. Quisque
-                                    ut erat vitae nisi ultrices placerat non eget velit. Integer ornare mi sed ipsum lacinia, non
-                                    sagittis mauris blandit. Morbi fermentum libero vel nisl suscipit, nec tincidunt mi consectetur.
+                                {person.personName}, a {person.personAge}-year-old {person.personProfession}, follows the motto “{person.personDescription}” With a passion for {person.personHobbies}, he is in a {person.personStatus} and always eager to learn and grow.
+
                                 </p>
                             </div>
                         </div>

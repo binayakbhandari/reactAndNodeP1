@@ -4,23 +4,25 @@ import { useNavigate } from "react-router-dom";
 
 function Form({type,id}) {
     // console.log(person, "Haha")
+    const defaultImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhaM9z2Crf5aEDYpFp1Bj18o3cQ690URe_ow&s"
     const navigate = useNavigate()
     const [data,setData] = useState({})
     const fetchPerson = async ()=>{
-        const response = axios.get("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id)
+        const response = await axios.get("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id)
         if(response.status === 200){
             setData(response.data)
         }
     }
+
     useEffect(()=>{
-            if(type == "edit"){
+            if(type === "edit"){
                 fetchPerson()
             }
     },[])
 
     const handleChange = (e)=>{
         // console.log(e.target.value)
-        const {name,value} = e.target
+        const {value,name} = e.target
         setData({
             ...data,
             [name] : value
@@ -38,7 +40,12 @@ function Form({type,id}) {
                 alert("Fail to create new profile.")
             }
         } else {
-
+            const response = await axios.put("https://66dc946947d749b72acbfa21.mockapi.io/persons/" + id, data)
+            if(response.status === 200){
+                navigate('/')
+            }else{
+                alert("Failed to edit the profile.")
+            }
         }
     }
 
@@ -53,7 +60,7 @@ function Form({type,id}) {
                                 {/* <p className="mt-1 text-sm leading-6 text-gray-600">Your information is completely secure—no need to worry!</p> */}
                                 <div className="flex flex-col items-center">
                                     {/* <div className="mt-2 flex items-center gap-x-3"> */}
-                                    <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src="https://media-bom2-1.cdn.whatsapp.net/v/t61.24694-24/457879708_2132613733787818_4224658857756710253_n.jpg?ccb=11-4&oh=01_Q5AaIDor49d-OENI5_eLa3JzXXPJArMRpYJZWhGnq1QmX1hy&oe=66EC6509&_nc_sid=5e03e0&_nc_cat=100    " alt="Bonnie image" />
+                                    <img className="w-24 h-24 mb-3 rounded-full shadow-lg" src={type === 'create' ? defaultImage : data.personImage} alt="Bonnie image" />
                                     {/* </div> */}
                                 </div>
 
@@ -165,16 +172,16 @@ function Form({type,id}) {
                                     </div>
 
                                     <div className="md:col-span-2">
-                                        <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">About</label>
+                                        <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">Moto</label>
                                         <div className="mt-2">
                                             <textarea
-                                                id="personDescription"
-                                                name="personDescription"
+                                                id="personMoto"
+                                                name="personMoto"
                                                 rows="3"
                                                 placeholder="By day, I teach; by night, I learn  . . . ."
                                                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 p-3 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
                                                 onChange={handleChange}
-                                                value={data.personDescription}
+                                                value={data.personMoto}
                                             ></textarea>
                                         </div>
                                     </div>
