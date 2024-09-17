@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+        setIsMobileMenuOpen(!isMobileMenuOpen)
     };
 
     return (
@@ -58,7 +58,7 @@ function Navbar() {
                         </div>
 
                         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                            <div className="flex flex-shrink-0 items-center">
+                            <div className="flex flex-shrink-0 items-center animate-rotating">
                                 <Link to="/">
                                     <img
                                         className="h-8 w-auto"
