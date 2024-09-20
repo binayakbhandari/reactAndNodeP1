@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
+    const defaultImage = "https://static-00.iconduck.com/assets.00/user-icon-2048x2048-ihoxz4vq.png"
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     const toggleMobileMenu = () => {
@@ -90,7 +91,7 @@ function Navbar() {
                                 <button type="button" className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                     <span className="absolute -inset-1.5"></span>
                                     <span className="sr-only">Open user menu</span>
-                                    <img className="h-8 w-8 rounded-full" src="https://media-bom2-1.cdn.whatsapp.net/v/t61.24694-24/457879708_2132613733787818_4224658857756710253_n.jpg?ccb=11-4&oh=01_Q5AaIDor49d-OENI5_eLa3JzXXPJArMRpYJZWhGnq1QmX1hy&oe=66EC6509&_nc_sid=5e03e0&_nc_cat=100" alt="" />
+                                    <img className="h-8 w-8 rounded-full" src="https://avatars.githubusercontent.com/u/173297872?s=400&v=4" onError={(e) => e.target.src = defaultImage} alt="" />
                                 </button>
                             </Link>
                         </div>
