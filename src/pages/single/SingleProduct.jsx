@@ -36,10 +36,7 @@ function SingleProduct() {
         <>
         <Navbar />
             <div className="bg-gray-100 dark:bg-gray-800 py-8">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col md:flex-row -mx-4">
-                        <div className="md:flex-1 px-4">
-                            <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+                
                                 <img className="w-full h-full object-cover" src={person.personImage} alt="Product Image" />
                             </div>
                             <div className="flex flex-wrap -mx-2 mb-4">
@@ -48,14 +45,7 @@ function SingleProduct() {
                                         <button className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add friend</button>
                                     </Link>
                                 </div> */}
-                                <div className="w-1/2 px-2 mb-2">
-                                    <Link to={`/edit/${person.id}`}>
-                                        <button className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Edit Details</button>
-                                    </Link>
-                                </div>
-                                <div className="w-1/2 px-2 mb-2">
-                                    <button onClick={deletePerson} className="w-full bg-red-900 dark:bg-gray-700 text-white dark:text-white py-2 px-4 rounded-full font-bold hover:bg-red-800 dark:hover:bg-gray-600">Delete Details</button>
-                                </div>
+                                
                             </div>
                         </div>
                         <div className="md:flex-1 px-4">
@@ -100,7 +90,14 @@ function SingleProduct() {
                                     <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Time Management</button>
                                 </div>
                             </div>
-                            
+                            <div>
+                                <span className="font-bold text-gray-700 dark:text-gray-300">Short Description:</span>
+                                <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                                    {person.personName} is a {person.personAge}-year-old {person.personProfession} driven by the motto “{person.personMoto}.” Known for {person.personGender === 'male' ? 'his' : 'her'} exceptional communication, teamwork, problem-solving, adaptability, and time management skills, {person.personGender === 'male' ? 'He' : 'She'} thrives in both personal and professional environments. With a passion for {person.personHobbies}, {person.personGender === 'male' ? 'he' : 'she'} is constantly seeking new opportunities to learn, grow, and make an impact.
+
+
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
