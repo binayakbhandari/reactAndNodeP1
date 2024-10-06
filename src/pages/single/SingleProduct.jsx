@@ -100,14 +100,7 @@ function SingleProduct() {
                                     <button className="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Time Management</button>
                                 </div>
                             </div>
-                            <div>
-                                <span className="font-bold text-gray-700 dark:text-gray-300">Short Description:</span>
-                                <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
-                                    {person.personName} is a {person.personAge}-year-old {person.personProfession} driven by the motto “{person.personMoto}.” Known for {person.personGender === 'male' ? 'his' : 'her'} exceptional communication, teamwork, problem-solving, adaptability, and time management skills, {person.personGender === 'male' ? 'He' : 'She'} thrives in both personal and professional environments. With a passion for {person.personHobbies}, {person.personGender === 'male' ? 'he' : 'she'} is constantly seeking new opportunities to learn, grow, and make an impact.
-
-
-                                </p>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
