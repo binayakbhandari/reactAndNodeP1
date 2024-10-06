@@ -188,21 +188,7 @@ function Form({ type, id }) {
                                             />
                                         </div>
                                     </div>
-                                    <div className="md:col-span-1">
-                                        <label htmlFor="personProfession" className="block text-sm font-medium leading-6 text-gray-900">Social Media Link</label>
-                                        <div className="mt-2">
-                                            <input
-                                                type="text"
-                                                name="personLink"
-                                                id="personLink"
-                                                autoComplete="personLink"
-                                                className="block w-full border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 shadow-sm ring-1 ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm"
-                                                placeholder="https://facebook.com/binayakbhandari.np/"
-                                                onChange={handleChange}
-                                                value={data.personLink}
-                                            />
-                                        </div>
-                                    </div>
+                                    
 
                                     <div className="md:col-span-2">
                                         <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">Moto</label>
